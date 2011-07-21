@@ -39,7 +39,7 @@
 */
 
 @interface CTSMTP : NSObject {
-	mailsmtp *mySMTP; /* This resource is created and freed by CTSMTPConnection */
+	__strong mailsmtp *mySMTP; /* This resource is created and freed by CTSMTPConnection */
 }
 - (id)initWithResource:(mailsmtp *)smtp;
 - (void)connectToServer:(NSString *)server port:(unsigned int)port;

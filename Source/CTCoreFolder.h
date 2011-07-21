@@ -42,7 +42,7 @@
 @class CTCoreMessage, CTCoreAccount;
 
 @interface CTCoreFolder : NSObject {
-	struct mailfolder *myFolder;
+	__strong struct mailfolder *myFolder;
 	CTCoreAccount *myAccount;
 	NSString *myPath;
 	BOOL connected;

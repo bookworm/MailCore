@@ -55,6 +55,12 @@
 	[super dealloc]; 
 }
 
+- (void) finalize {
+	mailstorage_disconnect(myStorage);
+	mailstorage_free(myStorage);
+	[super finalize];
+}
+
 
 - (BOOL)isConnected {
 	return connected;

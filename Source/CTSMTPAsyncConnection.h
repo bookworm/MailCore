@@ -26,7 +26,7 @@
 @interface CTSMTPAsyncConnection : NSObject 
 {
     CTSMTP* mSMTPObj;
-    mailsmtp* mSMTP;
+    __strong mailsmtp* mSMTP;
     CTCoreMessage* mMessage;
     NSDictionary* mServerSettings;
     NSThread* mMailThread;

@@ -163,4 +163,10 @@
 	//The structs are held by CTCoreMessage so we don't have to free them
 	[super dealloc];
 }
+
+- (void) finalize {
+	mailmime_single_fields_free(mMimeFields);
+	[super finalize];
+}
+
 @end

@@ -44,8 +44,8 @@
 @class CTCoreFolder, CTCoreAddress, CTCoreAttachment, CTMIME;
 
 @interface CTCoreMessage : NSObject {
-	struct mailmessage *myMessage;
-	struct mailimf_single_fields *myFields;
+	__strong struct mailmessage *myMessage;
+	__strong struct mailimf_single_fields *myFields;
 	CTMIME *myParsedMIME;
 	NSUInteger mySequenceNumber;
 }

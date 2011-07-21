@@ -43,7 +43,7 @@
 @class CTCoreFolder;
 
 @interface CTCoreAccount : NSObject {	
-	struct mailstorage	*myStorage;
+	__strong struct mailstorage	*myStorage;
 	BOOL				connected;
 }
 

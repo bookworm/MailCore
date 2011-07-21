@@ -115,6 +115,17 @@ char * etpan_encode_mime_header(char * phrase)
 }
 
 
+- (void) finalize {
+	if (myMessage != NULL) {
+		mailmessage_flush(myMessage);
+		mailmessage_free(myMessage);
+	}
+	if (myFields != NULL) {
+		mailimf_single_fields_free(myFields);
+	}
+	[super finalize];
+}
+
 
 - (int)fetchBody {
 	int err;

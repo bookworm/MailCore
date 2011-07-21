@@ -65,6 +65,14 @@
 	[super dealloc];
 }
 
+- (void) finalize {
+	if (connected)
+		[self disconnect];
+	
+	mailfolder_free(myFolder);
+	[super finalize];
+}
+
 
 - (void)connect {
 	int err = MAIL_NO_ERROR;
