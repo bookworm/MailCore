@@ -346,12 +346,12 @@ char * etpan_encode_mime_header(char * phrase)
     NSInteger timezoneOffsetInSeconds = 3600*d->dt_zone/100;
     
     NSDate *date = [self senderDate];
-    
-    return [date addTimeInterval:timezoneOffsetInSeconds * -1];
+    date = [date dateByAddingTimeInterval:timezoneOffsetInSeconds * -1];
+	return date;
 }
 
 - (NSDate*)sentDateLocalTimeZone {
-    return [[self sentDateGMT] addTimeInterval:[[NSTimeZone localTimeZone] secondsFromGMT]];
+    return [[self sentDateGMT] dateByAddingTimeInterval:[[NSTimeZone localTimeZone] secondsFromGMT]];
 }
 
 - (BOOL)isUnread {
