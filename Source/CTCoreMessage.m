@@ -384,6 +384,24 @@ char * etpan_encode_mime_header(char * phrase)
 	return NO;
 }
 
+- (BOOL)isFlagged {
+	struct mail_flags *flags = myMessage->msg_flags;
+	if (flags != NULL) {
+		BOOL flag_flagged = (flags->fl_flags & MAIL_FLAG_FLAGGED);
+		return flag_flagged;
+	}
+	return NO;
+}
+
+- (BOOL)isDeleted {
+	struct mail_flags *flags = myMessage->msg_flags;
+	if (flags != NULL) {
+		BOOL flag_flagged = (flags->fl_flags & MAIL_FLAG_DELETED);
+		return flag_flagged;
+	}
+	return NO;
+}
+
 - (NSString *)messageId {
   	if (myFields->fld_message_id != NULL) {
         char *value = myFields->fld_message_id->mid_value;

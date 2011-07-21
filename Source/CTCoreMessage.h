@@ -152,6 +152,16 @@
 - (BOOL)isNew;
 
 /*!
+ @abstract  Returnes YES if the message is flagged.
+ */
+- (BOOL)isFlagged;
+
+/*!
+ @abstract  Returnes YES if the message is (virtually) deleted from the IMAP server.
+ */
+- (BOOL)isDeleted;
+
+/*!
 	@abstract A machine readable ID that is guaranteed unique by the
 	host that generated the messaeg
 */
